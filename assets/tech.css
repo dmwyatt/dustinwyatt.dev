@@ -1,0 +1,57 @@
+.cards {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 15px;
+    padding: 1.5%;
+    box-sizing: border-box;
+}
+
+.cards li {
+    display: flex;
+}
+
+.card {
+    position: relative;
+    margin: 8px;
+    width: 125px; /* Set width of cards */
+    border: 1px solid rgb(88, 76, 84); /* Set up Border */
+    border-radius: 4px; /* Slightly Curve edges */
+    overflow: hidden; /* Fixes the corners */
+    display: flex; /* Children use Flexbox */
+    flex-direction: column; /* Rotate Axis */
+    box-shadow: rgba(0, 0, 0, 0.19) 0 0 8px 0;
+}
+
+.card-header {
+    color: white;
+    text-align: center;
+    font-size: 1.5rem;
+    background-color: rgba(88, 76, 84, .75);
+    padding: 5px 10px;
+}
+
+.card-main {
+    display: flex; /* Children use Flexbox */
+    flex-direction: column; /* Rotate Axis to Vertical */
+    justify-content: center; /* Group Children in Center */
+    align-items: center; /* Group Children in Center (+axis) */
+    padding: 0; /* Add padding to the top/bottom */
+    height: 125px;
+}
+
+.card-main img {
+    width: 100%;
+    object-fit: fill;
+}
+
+.margined-container {
+    margin: 5px;
+}
+
+@media screen and (max-width: 480px) {
+    .card {
+        width: 90px;
+        height: 120px;
+    }
+}

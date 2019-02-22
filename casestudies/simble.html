@@ -1,0 +1,134 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Simble Studios Case Study | Dustin Wyatt: Freelance
+         Software Developer</title>
+  <meta name="description"
+        content="Case study of the developer Dustin Wyatt's work to create a backend video server for one of his clients.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="apple-touch-icon" href="icon.png">
+  <!-- Place favicon.ico in the root directory -->
+
+  <meta name="theme-color" content="#fafafa">
+
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+
+<body>
+<section class="navigation">
+  <ul class="navigation">
+    <li><a href="../">Home</a></li>
+    <li class="active"><a href="../casestudies/">Case Studies</a></li>
+    <li><a href="../tech.html">Tech</a></li>
+    <li><a href="./about.html">About</a></li>
+    <li><a href="./contact.html">Contact</a></li>
+  </ul>
+</section>
+<div class="content">
+  <article id="simble">
+    <h1>Simble Studios Video Server</h1>
+
+    <h2>The Problem</h2>
+
+    <p>
+
+      Dave Vedder at Simble Studios approached me to help them create a
+      complete system for non-technical users to upload videos from their phone
+      and for staff members to be able to view said videos. This project was
+      intended for one of their own clients.
+    </p>
+
+    <h2>The Process</h2>
+    <p>
+
+      Since Simble Studios is a software development company, they had the
+      technical chops to quickly pin down requirements after just a bit of
+      conversation with me. This allowed me to quickly develop a specification
+      of the server software I would be providing to them.
+
+
+    </p>
+
+    <h2>The Solution</h2>
+    <p>
+
+      This project had a few unique requirements:
+
+    </p>
+    <ul>
+      <li>
+
+        Uploading users did not have traditional username/password accounts.
+
+        <p>
+
+          The users provided their phone number, and then we sent them an SMS
+          message with an authorization code. The users then provided their
+          phone number and auth code to authenticate with the system.
+
+        </p>
+
+      </li>
+      <li>
+
+        The client required uploaded video files to be encrypted while they
+        were on-disk as well as during streaming.
+
+        <p>
+
+          To address this, I developed a system using industry-standard
+          encryption while the data was at rest and while it was streaming.
+
+        </p>
+      </li>
+      <li>
+        Videos had to be decrypted, encrypted, and encoded "offline".
+
+        <p>
+
+          This means we had to set up a system of worker tasks that processed
+          video files and sent notifications to the appropriate people when the
+          processing was done.
+
+        </p>
+      </li>
+    </ul>
+
+    <p>
+
+      During the course of this project the requirements changed several times.
+      We were able to follow the procedures outlined in my standard contract
+      and make the required changes without any drama.
+
+    </p>
+
+    <p>
+
+      In the end we had a functional system with a clean API that Simble
+      Studios could use as the backend for the project they were going to
+      deliver to their client.
+
+    </p>
+
+    <blockquote>
+      <p>We were nervous about hiring an outside developer, but it turned out
+         that Dustin was easy to work with and helped us solve problems!</p>
+
+      <p>The requirements for our product were in flux, but Dustin easily
+         adapted and helped us find solutions to our problems. He also worked
+         well with our other developers.</p>
+      <br>
+      &#8212;Dave Vedder
+
+    </blockquote>
+  </article>
+</div>
+
+</body>
+
+</html>
