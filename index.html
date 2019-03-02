@@ -7,9 +7,53 @@
   <link href="https://fonts.googleapis.com/css?family=Abril+Fatface|Roboto"
         rel="stylesheet">
   <link rel="stylesheet" href="assets/style.css">
+  <script>
+    function ready(fn) {
+      if (document.readyState !== 'loading') {
+        doSticky(document.getElementById("navigation"));
+        stickNavigation();
+      } else {
+        document.addEventListener('DOMContentLoaded', stickNavigation);
+      }
+    }
+
+    function stickNavigation() {
+      let navMenu = document.getElementById("navigation");
+      let hero = document.getElementById("hero");
+
+      // When the user scrolls the page, execute doSticky
+      window.onscroll = function () {
+        doSticky(navMenu);
+        unStick(hero, navMenu);
+      };
+    }
+
+    function doSticky(el) {
+      // Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
+      // Get the offset position of the navbar
+      let sticky = el.offsetTop;
+      if (window.pageYOffset >= sticky) {
+        el.classList.add("sticky")
+      } else {
+        el.classList.remove("sticky");
+      }
+    }
+
+    function unStick(el, nav) {
+      let sticky = el.offsetTop + el.offsetHeight;
+      if (window.pageYOffset < sticky) {
+        nav.classList.remove("sticky");
+      }
+    }
+
+    ready();
+
+  </script>
+
+
 </head>
 <body>
-<div class="hero">
+<div class="hero" id="hero">
   <div class="content">
     <header>
       <h1>Dustin Wyatt</h1>
@@ -22,10 +66,10 @@
 
 
         <p>
-          I can either work with your existing developers or develop a solution
-          from scratch.
+          I can work with your existing developers or develop a solution from
+          scratch.
         </p>
-        <a class="btn" href="#">Contact me</a>
+        <a class="btn" href="mailto:dustin.wyatt@gmail.com?subject=Portfolio job contact">Contact me</a>
         <p>
           <span id="subtext">Web frontend/backend. Automation. Client-side
                             apps. Mobile.</span>
@@ -37,13 +81,13 @@
 
 <div id="scroll-more-arrow"></div>
 
-<section class="navigation">
+<section class="navigation" id="navigation">
   <ul class="navigation">
     <li class="active"><a href="./">Home</a></li>
     <li><a href="./casestudies/">Case Studies</a></li>
     <li><a href="./tech.html">Tech</a></li>
     <li><a href="./about.html">About</a></li>
-    <li><a href="./contact.html">Contact</a></li>
+    <li><a href="mailto:dustin.wyatt@gmail.com?subject=Portfolio job contact">Contact</a></li>
   </ul>
 </section>
 
