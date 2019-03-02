@@ -13,50 +13,6 @@
   <link href="https://fonts.googleapis.com/css?family=Abril+Fatface|Roboto"
         rel="stylesheet">
   <link rel="stylesheet" href="assets/style.css">
-  <script>
-    function ready(fn) {
-      if (document.readyState !== 'loading') {
-        doSticky(document.getElementById("navigation"));
-        stickNavigation();
-      } else {
-        document.addEventListener('DOMContentLoaded', stickNavigation);
-      }
-    }
-
-    function stickNavigation() {
-      let navMenu = document.getElementById("navigation");
-      let hero = document.getElementById("hero");
-
-      // When the user scrolls the page, execute doSticky
-      window.onscroll = function () {
-        doSticky(navMenu);
-        unStick(hero, navMenu);
-      };
-    }
-
-    function doSticky(el) {
-      // Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
-      // Get the offset position of the navbar
-      let sticky = el.offsetTop;
-      if (window.pageYOffset >= sticky) {
-        el.classList.add("sticky")
-      } else {
-        el.classList.remove("sticky");
-      }
-    }
-
-    function unStick(el, nav) {
-      let sticky = el.offsetTop + el.offsetHeight;
-      if (window.pageYOffset < sticky) {
-        nav.classList.remove("sticky");
-      }
-    }
-
-    ready();
-
-  </script>
-
-
 </head>
 <body>
 <div class="hero" id="hero">
@@ -80,8 +36,15 @@
                                                                               me</a>
         <p>
           <span id="subtext">Web frontend/backend. Automation. Client-side
-                            apps. Mobile.</span>
+                            apps. Mobile. Machine learning.</span>
         </p>
+        <ul>
+          <li id="web">Full-stack web</li>
+          <li id="auto">Automation</li>
+          <li id="os">Windows/Linux apps</li>
+          <li id="mobile">Mobile</li>
+          <li id="ai">Machine learning</li>
+        </ul>
       </div>
     </section>
   </div>
@@ -155,5 +118,55 @@
 
   </section>
 </div>
+<script>
+  function ready(fn) {
+    if (document.readyState !== 'loading') {
+      doSticky(document.getElementById("navigation"));
+      stickNavigation();
+    } else {
+      document.addEventListener('DOMContentLoaded', stickNavigation);
+    }
+  }
+
+  function stickNavigation() {
+    let navMenu = document.getElementById("navigation");
+    let hero = document.getElementById("hero");
+
+    // When the user scrolls the page, execute doSticky
+    window.onscroll = function () {
+      doSticky(navMenu);
+      unStick(hero, navMenu);
+    };
+  }
+
+  function doSticky(el) {
+    // Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
+    // Get the offset position of the navbar
+    let sticky = el.offsetTop;
+    if (window.pageYOffset >= sticky) {
+      el.classList.add("sticky")
+    } else {
+      el.classList.remove("sticky");
+    }
+  }
+
+  function unStick(el, nav) {
+    let sticky = el.offsetTop + el.offsetHeight;
+    if (window.pageYOffset < sticky) {
+      nav.classList.remove("sticky");
+    }
+  }
+
+  function randomEmojis() {
+    let emojis = [
+      {'emoji': '❇️', 'label': 'Sparkle emoji as bullet point.'},
+      {'emoji': '💎', 'label': 'Gemstone emoji as bullet point.'},
+      {'emoji': '✨', 'label': 'Sparkle emoji as bullet point.'}
+    ]
+  }
+
+  ready();
+
+</script>
 </body>
 </html>

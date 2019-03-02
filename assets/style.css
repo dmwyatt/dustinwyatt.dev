@@ -1,3 +1,10 @@
+:root {
+    --btn-color: rgba(120, 122, 138, 0.8);
+    --nav-bg-color: #34384C;
+    --nav-link-color: #F7EFE4;
+    --nav-link-bg-color: #111;
+    --highlight-color: #FFA726;
+}
 body, html {
     font-size: 10px;
     font-family: Roboto, sans-serif;
@@ -61,18 +68,56 @@ body, html {
 }
 
 
-.hero section {
+
+.hero h1, h2 {
     text-align: center;
 }
 
-.hero header {
+.hero p {
+    margin: 1.4rem;
     text-align: center;
 }
+
+.hero ul {
+    text-align: center;
+    padding-left: 0px;
+}
+
+.hero li {
+    display: inline-block;
+}
+
+.hero li::before {
+    content: "💎";
+}
+
+.hero li#web::before {
+    content: "🕸️";
+}
+
+.hero li#auto::before {
+    content: "🤖";
+}
+
+.hero li#os::before {
+    content: "💻";
+}
+
+.hero li#mobile::before {
+    content: "📱";
+}
+
+.hero li#ai::before {
+    content: "🤖";
+}
+/*.hero header {*/
+    /*text-align: center;*/
+/*}*/
 
 .hero .btn {
     display: block;
     width: 200px;
-    border: 2px solid rgba(120, 122, 138, 0.8);
+    border: 2px solid var(--btn-color);
     padding: 1em;
     margin: 30px auto;
 
@@ -84,7 +129,7 @@ body, html {
 
     border-radius: 4px;
 
-    background-color: rgba(120, 122, 138, 0.8);
+    background-color: var(--btn-color);
 }
 
 header {
@@ -93,7 +138,7 @@ header {
 
 div#scroll-more-arrow::before {
     content: '▼';
-    color: #fff;
+    color: white;
     position: absolute;
     opacity: 0.7;
     font-size: 4rem;
@@ -128,7 +173,7 @@ div#scroll-more-arrow::before {
 ul.navigation {
     text-align: center;
     list-style-type: none;
-    background-color: #34384C;
+    background-color: var(--nav-bg-color);
     margin-top: 0;
     padding-left: 0;
 }
@@ -140,12 +185,12 @@ ul.navigation li {
 
 
 ul.navigation li:hover {
-    background-color: #111;
+    background-color: var(--nav-link-bg-color);
 }
 
 ul.navigation a {
     display: block;
-    color: #F7EFE4;
+    color: var(--nav-link-color);
     text-align: center;
     padding: 10px;
     text-decoration: none;
@@ -160,7 +205,7 @@ section.navigation {
 }
 
 .active > a {
-    border-bottom: 4px solid #FFA726;
+    border-bottom: 4px solid var(--highlight-color);
 }
 
 @media screen and (max-width: 1020px) {
