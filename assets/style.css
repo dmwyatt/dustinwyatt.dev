@@ -5,6 +5,7 @@
     --nav-link-bg-color: #111;
     --highlight-color: #FFA726;
 }
+
 body, html {
     font-size: 10px;
     font-family: Roboto, sans-serif;
@@ -68,7 +69,6 @@ body, html {
 }
 
 
-
 .hero h1, h2 {
     text-align: center;
 }
@@ -80,7 +80,9 @@ body, html {
 
 .hero ul {
     text-align: center;
-    padding-left: 0px;
+    padding: 1rem;
+    /*background-color: gray;*/
+
 }
 
 .hero li {
@@ -100,7 +102,7 @@ body, html {
 }
 
 .hero li#os::before {
-    content: "💻";
+    content: "📀";
 }
 
 .hero li#mobile::before {
@@ -108,11 +110,8 @@ body, html {
 }
 
 .hero li#ai::before {
-    content: "🤖";
+    content: "🧠";
 }
-/*.hero header {*/
-    /*text-align: center;*/
-/*}*/
 
 .hero .btn {
     display: block;
