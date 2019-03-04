@@ -13,12 +13,11 @@ body, html {
 }
 
 .article-img {
-    max-width: 300px;
-    /*max-height: 100%;*/
+    max-height: 200px;
     float: right;
     margin: 10px;
     border: solid 1px black;
-    box-shadow: 5px 5px 11px #363636;
+    box-shadow: 1px 1px 11px #363636;
 }
 
 .hero h1 {
@@ -68,8 +67,7 @@ body, html {
     font-size: 1.4rem;
 }
 
-
-.hero h1, h2 {
+h1, h2 {
     text-align: center;
 }
 
@@ -95,27 +93,27 @@ body, html {
 }
 
 .hero li::before {
-    content: "💎";
+    content: "💎 ";
 }
 
 .hero li#web::before {
-    content: "🕸️";
+    content: "🕸️ ";
 }
 
 .hero li#auto::before {
-    content: "🤖";
+    content: "🤖 ";
 }
 
 .hero li#os::before {
-    content: "📀";
+    content: "📀 ";
 }
 
 .hero li#mobile::before {
-    content: "📱";
+    content: "📱 ";
 }
 
 .hero li#ai::before {
-    content: "🧠";
+    content: "🧠 ";
 }
 
 .hero .btn {
@@ -225,6 +223,10 @@ section.navigation {
 
     .sticky + .content {
         padding-top: 132px;
+    }
+
+    .article-img {
+        float: none;
     }
 }
 
