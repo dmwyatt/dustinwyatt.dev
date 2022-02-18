@@ -29,6 +29,14 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="assets/style.css" />
+
+    <link rel="stylesheet" href="https://unpkg.com/octicons@4.4.0/build/font/octicons.css">
+    <link rel="stylesheet" href="https://unpkg.com/github-activity-feed@latest/dist/github-activity.min.css">
+
+    <script type="text/javascript" src="https://unpkg.com/mustache@4.2.0/mustache.min.js"></script>
+    <script type="text/javascript"
+            src="https://unpkg.com/github-activity-feed@latest/dist/github-activity.min.js"></script>
+
   </head>
   <body>
     <div class="hero" id="hero">
@@ -84,7 +92,7 @@
       </ul>
     </section>
 
-    <div class="content">
+    <main class="content">
       <section id="what-i-can-do-for-you">
         <h2>What I Can Do For You</h2>
 
@@ -128,16 +136,23 @@
           that integrate well and remove a lot of the tedium and wasted effort.
         </p>
       </section>
+      <div style="height: 500px; margin: 8px 4px 4px" id="feed"></div>
 
-      <section id="tech"></section>
-    </div>
+    </main>
     <script>
       function ready(fn) {
         if (document.readyState !== "loading") {
           doSticky(document.getElementById("navigation"));
           stickNavigation();
         } else {
-          document.addEventListener("DOMContentLoaded", stickNavigation);
+          document.addEventListener("DOMContentLoaded", () => {
+            stickNavigation()
+            GitHubActivity.feed({
+              username: "dmwyatt",
+              selector: "#feed",
+              limit: 20, // optional
+            });
+          });
         }
       }
 
